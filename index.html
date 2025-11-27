@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Loan Application — Totally Serious Bank</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="page">
+    <h1>Loan Application</h1>
+    <p class="lead">Fill this form to see if you qualify for our totally-not-made-up loan program.</p>
+
+    <form id="loanForm" autocomplete="off">
+      <div class="row">
+        <div style="flex:1">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="e.g., John Doo" required />
+        </div>
+        <div style="width:120px">
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" min="12" max="120" placeholder="18" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div style="flex:1">
+          <label for="amount">Loan amount (₦)</label>
+          <input id="amount" name="amount" type="number" min="1000" placeholder="20000" required />
+        </div>
+        <div style="width:170px">
+          <label for="term">Term</label>
+          <select id="term" name="term">
+            <option>1 month</option>
+            <option>3 months</option>
+            <option>6 months</option>
+            <option>12 months</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px">
+        <label for="purpose">Purpose</label>
+        <textarea id="purpose" name="purpose" placeholder="e.g., Food" rows="2"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="submitBtn">Submit Application</button>
+        <button type="button" class="ghost" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <div class="result-banner" id="resultBanner">
+      <h2>LOAN REJECTED 🚫🔥</h2>
+      <div class="result-text" id="resultText">Omoo — I no da on fund now oo. Come back later 😂🤏🏽</div>
+      <div style="margin-top:12px;">
+        <button id="tryAgain" class="ghost">Try again</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <h3>Application Status</h3>
+      <p id="modalMsg">Hold on...</p>
+      <button class="btn-close" id="closeModal">Close</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>

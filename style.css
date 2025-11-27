@@ -1,0 +1,60 @@
+:root{
+    --bg:#f4f6fb;
+    --card:#ffffff;
+    --accent:#d9534f;
+    --muted:#6b7280;
+  }
+
+  *{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+  body{
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(180deg,var(--bg),#e9eef8); padding:32px;
+  }
+
+  .container{
+    width:100%; max-width:760px; background:var(--card); border-radius:16px;
+    box-shadow:0 10px 30px rgba(16,24,40,0.08); padding:28px; position:relative; overflow:hidden;
+    transition: transform 0.05s linear; /* smooth micro shake */
+  }
+
+  h1{margin:0 0 8px;font-size:20px}
+  p.lead{margin:0 0 18px;color:var(--muted)}
+
+  form .row{display:flex;gap:12px;margin-bottom:12px}
+  input, select, textarea{
+    padding:10px 12px;border-radius:8px;border:1px solid #e6e9f2;background:transparent;font-size:14px;width:100%;outline:none;
+  }
+  label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+
+  .actions{display:flex;gap:12px;align-items:center;margin-top:8px}
+  button{
+    padding:10px 14px;border-radius:10px;border:0;background:#2563eb;color:#fff;font-weight:600;cursor:pointer;
+    box-shadow:0 6px 14px rgba(37,99,235,0.18);
+  }
+  button.ghost{background:transparent;color:#374151;border:1px solid #e6e9f2;box-shadow:none}
+
+  .result-banner{
+    display:none; margin-top:18px; padding:20px; border-radius:12px;
+    background:linear-gradient(90deg,#fff0f0,#fff6f6);
+    border:1px solid rgba(217,83,79,0.12);
+    align-items:center; gap:14px; color:var(--accent);
+    box-shadow:0 8px 30px rgba(217,83,79,0.06);
+  }
+  .result-banner.show{display:flex;flex-direction:column}
+  .result-banner h2{margin:0;font-size:20px}
+  .result-text{font-size:16px;color:#7f1d1d;margin-top:6px}
+
+  .modal{
+    position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+    pointer-events:none;opacity:0;transition:opacity .18s ease;
+  }
+  .modal.show{pointer-events:auto;opacity:1}
+  .modal-card{
+    width:320px;background:#fff;border-radius:12px;padding:18px;box-shadow:0 20px 50px rgba(2,6,23,0.2);
+    text-align:center;border:1px solid #eee;
+  }
+  .modal-card h3{margin:0 0 8px;color:var(--accent)}
+  .modal-card p{margin:0 0 12px;color:#374151}
+  .btn-close{padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+
+  .visually-hidden{position:absolute !important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
